@@ -42,6 +42,8 @@
 
 # # Quiz5
 
+# 나의 방법
+
 # class Test5:
 #     def __init__(self,dict):
 #         self.dict=dict
@@ -52,7 +54,30 @@
 #         }
 
 # peng=Test5(info)
-# print(peng.dict)
+# print(peng.dict["name"])
+# print(peng.dict["address"])
+# print(peng.dict["phone"])
+
+# 다른 방법
+
+# class Test5:
+#     def __init__(self,info):
+#         self.name = info["name"]
+#         self.address = info["address"]
+#         self.phone = info["phone"]
+
+# info = {
+#     "name":"펭수",
+#     "address":"남극",
+#     "phone":"010-1234-5678"
+#     }
+
+# peng=Test5(info)
+
+# print(peng.name)
+# print(peng.address)
+# print(peng.phone)
+
 
 # # Quiz6
 
