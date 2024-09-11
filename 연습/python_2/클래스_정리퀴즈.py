@@ -100,3 +100,32 @@
 #         self.divide/=num
 
 # Test7=Test6()
+
+# # Quiz6
+
+class Test6:
+    def calcSum(self, num1, num2):
+        sum = num1 + num2
+        print("Sum: {}".format(sum))
+
+    def calcSub(self, num1, num2):
+        sub = num1 - num2
+        print("Sub: {}".format(sub))
+
+# # Quiz7
+
+class Test7(Test6):
+    def calcMul(self, num1, num2):
+        mul = num1 * num2
+        print("Mul: {}".format(mul))
+
+    def calcDiv(self, num1, num2):
+        div = num1 / num2
+        print("Div: {}".format(div))
+
+calc=Test7()
+
+calc.calcSum(100,200)
+calc.calcSub(100,200)
+calc.calcMul(100,200)
+calc.calcDiv(100,200)
