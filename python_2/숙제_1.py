@@ -69,7 +69,8 @@
 # #     if answer<=0 or answer>=20:
 # #          break
 
-# 함수로 코드 간결하게 하기
+
+# 09 15일 수장
 
 class Calc:
     def __init__(self):

@@ -25,7 +25,7 @@
 
 # # 024
 
-string = "PYTHON"
+# string = "PYTHON"
 
 # num=0
 # for i in range(-1,-7,-1):
@@ -34,6 +34,41 @@ string = "PYTHON"
 
 # # 025
 
-phone_number = "010-1111-2222"
+# phone_number = "010-1111-2222"
 
-print(phone_number[0:4],phone_number[])
+# # print(phone_number[0:3],phone_number[5:8],phone_number[9:13])
+
+# phone_number = phone_number.replace("-"," ")
+# print(phone_number)
+
+# # 026
+
+# phone_number=phone_number.replace("-","")
+# print(phone_number)
+
+# # 027
+
+# url = "http://sharebook.kr"
+# a=url.split(".")
+# print(a[1])
+
+# print(url[-2:])
+
+# # 028
+
+# lang = 'python'
+# lang[0] = 'P'# TypeError : 문자열은 변경할 수 없다
+# print(lang)
+
+# # 029
+
+# string = 'abcdfe2a354a32a'
+# a = string.replace("a","A")
+# print(a)
+
+# # 030
+
+# string = 'abcd'
+# a=string.replace("b","B") # string 변수 자체는 변하지 않는다.
+# print(string)
+# print(a)
