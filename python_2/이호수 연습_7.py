@@ -330,8 +330,11 @@
 #     gamepad = pygame.display.set_mode((pad_width, pad_height))
 #     pygame.display.set_caption("☆MY PYGAME☆")
 #     fighter = pygame.image.load('별탄커비.png')
+#     fighter = pygame.transform.scale(fighter, (36,38))
 #     enemy = pygame.image.load('디디디대마왕.webp')
+#     enemy = pygame.transform.scale(enemy, (26,20))
 #     clock = pygame.time.Clock()
+    
 
 # initGame()
 # runGame()
