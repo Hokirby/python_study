@@ -14,6 +14,77 @@
 클래스 생성해서 풀어주세요!
 """
 
+# 수정 답안
+
+class Calc:
+    def __init__(self):
+        self.userInput={}
+        self.answer=0
+
+    def calcRes(self,num1,num2,sign):
+        # global answer
+        if (sign=="+"):
+            self.answer=num1+num2
+        elif (sign=="-"):
+            self.answer=num1-num2
+        elif (sign=="*"):
+            self.answer=num1*num2
+        elif (sign=="/"):
+            self.answer=num1/num2
+    
+    def calcLast(self, strInput, intInput):
+
+        if intInput>=10:
+            strInput_list=[]
+            for i in str(intInput):
+                strInput_list.append(i)
+                lastInt=int(strInput_list[len(strInput_list)-1])
+        else:
+             lastInt=intInput
+        
+        if (strInput=="a"):
+                self.userInput["a"]=lastInt
+        elif (strInput=="b"):
+                self.userInput["b"]=lastInt
+        elif (strInput=="c"):
+                self.userInput["c"]=lastInt
+        elif (strInput=="d"):
+                self.userInput["d"]=lastInt
+    
+    def calcMatch(self,calcInput):
+        return self.userInput[calcInput]
+
+
+
+calculation=Calc()
+
+a=int(input("a 값을 입력해주세요 : "))
+b=int(input("b 값을 입력해주세요 : "))
+c=int(input("c 값을 입력해주세요 : "))
+d=int(input("d 값을 입력해주세요 : "))
+
+
+calculation.calcLast("a",a)
+calculation.calcLast("b",b)
+calculation.calcLast("c",c)
+calculation.calcLast("d",d)
+print(calculation.userInput)
+
+
+while True:
+    fstInput=input("첫번째 값을 입력해 주세요 : ")
+    fstInput=calculation.calcMatch(fstInput)
+    sndInput=input("두번째 값을 입력해 주세요 : ")
+    sndInput=calculation.calcMatch(sndInput)
+    sign=input("연산 기호를 입력해 주세요 : ")
+    calculation.calcRes(fstInput,sndInput,sign)
+    print(calculation.answer)
+    if calculation.answer<0 or calculation.answer>=20:
+        break
+
+
+# 첫 답안
+
 
 class Calc:
     def __init__(self,dict):
@@ -33,6 +104,7 @@ class Calc:
         elif (sign=="/"):
             answer=num1/num2
             self.result=answer
+
 
 a=int(input("a 값을 입력해주세요 : "))
 if a>=10:
