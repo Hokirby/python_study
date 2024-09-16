@@ -259,83 +259,83 @@
 
 # # 적을 내려오게 하기
 
-# import pygame
+import pygame
 
-# from random import randrange
-# red = randrange(0,256,1)
-# green = randrange(0,256,1)
-# blue = randrange(0,256,1)
-# COLOR = (red, green, blue)
+from random import randrange
+red = randrange(0,256,1)
+green = randrange(0,256,1)
+blue = randrange(0,256,1)
+COLOR = (red, green, blue)
 
-# pad_width = 480
-# pad_height = 640
+pad_width = 480
+pad_height = 640
 
-# fighter_width = 36
-# fighter_height = 38
+fighter_width = 36
+fighter_height = 38
 
-# enemy_width = 26
-# eneymy_height = 20
+enemy_width = 26
+eneymy_height = 20
 
-# def drawObject(obj, x, y):
-#     global gamepad
-#     gamepad.blit(obj, (x,y))
+def drawObject(obj, x, y):
+    global gamepad
+    gamepad.blit(obj, (x,y))
 
-# def runGame():
-#     global gamepad, clock, fighter, enemy # 전역 변수
+def runGame():
+    global gamepad, clock, fighter, enemy # 전역 변수
 
-#     x = pad_width * 0.45
-#     y = pad_height * 0.9
-#     x_change = 0
+    x = pad_width * 0.45
+    y = pad_height * 0.9
+    x_change = 0
 
-#     enemy_x= randrange(0, pad_width-enemy_width)
-#     enemy_y = 0
-#     enemy_speed = 3
+    enemy_x= randrange(0, pad_width-enemy_width)
+    enemy_y = 0
+    enemy_speed = 3
 
-#     ongame = False
-#     while not ongame: # while True문 True==not False 
-#         for event in pygame.event.get():
-#             if event.type == pygame.QUIT:
-#                 ongame = True # False 처리/break 지원 안하기 때문에 사용
-#             if event.type == pygame.KEYDOWN:
-#                 if event.key == pygame.K_LEFT:
-#                     x_change -= 5
-#                 if event.key == pygame.K_RIGHT:
-#                     x_change += 5
+    ongame = False
+    while not ongame: # while True문 True==not False 
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                ongame = True # False 처리/break 지원 안하기 때문에 사용
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    x_change -= 5
+                if event.key == pygame.K_RIGHT:
+                    x_change += 5
             
-#             if event.type == pygame.KEYUP:
-#                 if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-#                     x_change = 0
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                    x_change = 0
 
-#         gamepad.fill(COLOR)
+        gamepad.fill(COLOR)
 
-#         x += x_change
+        x += x_change
 
-#         if x < 0:
-#             x = 0
-#         elif x > pad_width - fighter_width:  #444
-#             x= pad_width - fighter_width
+        if x < 0:
+            x = 0
+        elif x > pad_width - fighter_width:  #444
+            x= pad_width - fighter_width
 
-#         drawObject(fighter, x, y)
+        drawObject(fighter, x, y)
 
-#         enemy_y += enemy_speed
-#         drawObject(enemy, enemy_x, enemy_y)
+        enemy_y += enemy_speed
+        drawObject(enemy, enemy_x, enemy_y)
 
-#         pygame.display.update()
-#         clock.tick(60)
-#     pygame.quit()
+        pygame.display.update()
+        clock.tick(60)
+    pygame.quit()
 
-# def initGame():
-#     global gamepad, clock, fighter, enemy
-#     pygame.init()
-#     gamepad = pygame.display.set_mode((pad_width, pad_height))
-#     pygame.display.set_caption("☆MY PYGAME☆")
-#     fighter = pygame.image.load('별탄커비.png')
-#     fighter = pygame.transform.scale(fighter, (36,38))
-#     enemy = pygame.image.load('디디디대마왕.webp')
-#     enemy = pygame.transform.scale(enemy, (26,20))
-#     clock = pygame.time.Clock()
+def initGame():
+    global gamepad, clock, fighter, enemy
+    pygame.init()
+    gamepad = pygame.display.set_mode((pad_width, pad_height))
+    pygame.display.set_caption("☆MY PYGAME☆")
+    fighter = pygame.image.load('별탄커비.png')
+    fighter = pygame.transform.scale(fighter, (36,38))
+    enemy = pygame.image.load('디디디대마왕.webp')
+    enemy = pygame.transform.scale(enemy, (26,20))
+    clock = pygame.time.Clock()
     
 
-# initGame()
-# runGame()
+initGame()
+runGame()
 

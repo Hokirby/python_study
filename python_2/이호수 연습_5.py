@@ -71,14 +71,14 @@
 # turtle.forward(150)
 # turtle.mainloop()
 
-# a=int(input("몇각형?: "))
-# b=int(input("한 변의 길이: "))
-# import turtle
-# turtle.shape("turtle")
-# for i in range(0,a):
-#     turtle.forward(b)
-#     turtle.left(360/a)
-# turtle.mainloop()
+a=int(input("몇각형?: "))
+b=int(input("한 변의 길이: "))
+import turtle
+turtle.shape("turtle")
+for i in range(0,a):
+    turtle.forward(b)
+    turtle.left(360/a)
+turtle.mainloop()
 
 
 # from random import random
