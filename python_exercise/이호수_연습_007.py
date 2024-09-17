@@ -61,21 +61,3 @@
 
 # data2 = sorted(data)
 # print(data2)
-
-# # 071
-
-# my_variable = ()
-# print(type(my_variable))
-
-# # 072
-
-# my_variable = ("닥터 스트레인지","스플릿","럭키")
-
-# # 073
-
-# my_tuple = (1,)
-
-# # 074
-
-t = (1,2,3)
-t[0] = 'a'
