@@ -33,10 +33,50 @@
 
 # # 245
 
-import datetime
+# import datetime
 
-now = now = datetime.datetime.today()
+# now = now = datetime.datetime.today()
 
-timeResult = datetime.datetime.strptime("2020-05-04", "%Y-%M-%D %H:%M:%S")
+# timeResult = datetime.datetime.strptime("2020-05-04", "%Y-%m-%d")
 
-print(timeResult, type(timeResult))
+# print(timeResult, type(timeResult))
+
+# # 246
+
+# import time
+
+# import datetime
+
+# while True:
+#     now = datetime.datetime.now()
+#     print(now)
+#     time.sleep(1)
+
+# # 247
+
+# import os # os.rename()
+# from os import rename # rename()
+# from os import * # getcwd(), rename(), ...
+# import os as myos # myos.detcwd()
+
+
+# # 248
+
+# import os
+# path = os.getcwd()
+# print(path, type(path))
+
+# # 249
+
+# import os
+
+# os.rename("C:/Users/admin/Desktop/python_study/python_exercise/test.txt",
+#           "C:/Users/admin/Desktop/python_study/python_exercise/rename.txt"
+#           )
+
+# # 250
+
+# import numpy
+
+# for i in numpy.arange(0,5,0.1):
+#     print(i)
