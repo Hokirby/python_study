@@ -395,55 +395,81 @@
 
 # # 280
 
-class Account:
-    # class variable
-    objectNumbers = 0
-    accountNumbers = 0
+# class Account:
+#     # class variable
+#     objectNumbers = 0
+#     accountNumbers = 0
 
-    def  __init__(self, holder, balance):
-        self.depositCount = 0
-        self.holder = holder
-        self.balance = balance
-        self.bankname = "SC은행"
-        Account.objectNumbers += 1
+#     def  __init__(self, holder, balance):
+#         self.depositCount = 0
+#         self.depositLog = []
+#         self.withdrawLog = []
 
-    def infoDisplay(self):
-        print(f"은행이름: {self.bankname}")
-        print(f"예금주: {self.holder}")
-        print(f"계좌번호: {self.accountNumber()}")
-        print("잔고: {:,}원".format(self.balance))
+#         self.holder = holder
+#         self.balance = balance
+#         self.bankname = "SC은행"
+#         Account.objectNumbers += 1
+
+#     def infoDisplay(self):
+#         print(f"은행이름: {self.bankname}")
+#         print(f"예금주: {self.holder}")
+#         print(f"계좌번호: {self.accountNumber()}")
+#         print("잔고: {:,}원".format(self.balance))
     
-    def accountNumber(self):
-        from random import randrange
-        fstNumber = randrange(1,1000)
-        sndNumber = randrange(1,100)
-        thdNumber = randrange(1,1000000)
-        accountNumber = str(fstNumber) + "-" + str(sndNumber) + "-" + str(thdNumber)
-        Account.accountNumbers += 1
-        return accountNumber
+#     def accountNumber(self):
+#         from random import randrange
+#         fstNumber = randrange(1,1000)
+#         sndNumber = randrange(1,100)
+#         thdNumber = randrange(1,1000000)
+#         accountNumber = str(fstNumber) + "-" + str(sndNumber) + "-" + str(thdNumber)
+#         Account.accountNumbers += 1
+#         return accountNumber
     
-    def accountCount(cls):
-        return cls.accountNumbers # Account.accountNumbers
+#     def accountCount(cls):
+#         return cls.accountNumbers # Account.accountNumbers
     
-    def deposit(self, amountD):
-        if (amountD<1):
-            print("입금은 최소 1원 이상만 가능합니다.")
-        else:
-            self.balance += amountD
-            self.depositCount += 1
+#     def deposit(self, amountD):
+#         if (amountD<1):
+#             print("입금은 최소 1원 이상만 가능합니다.")
+#         else:
+#             self.depositLog.append(amountD)
+#             self.balance += amountD
+#             self.depositCount += 1
         
-        if self.depositCount % 5 == 0:
-            self.balance += self.balance*0.01
+#         if self.depositCount % 5 == 0:
+#             self.balance += self.balance*0.01
         
-        return self.balance
+#         return self.balance
     
-    def withdraw(self, amountW):
-        if (amountW > self.balance):
-            print("계좌의 잔소 이상으로 출금할 수 없습니다.")
-        else:
-            self.balance -= amountW
-        return self.balance
+#     def withdraw(self, amountW):
+#         if (amountW > self.balance):
+#             print("계좌의 잔소 이상으로 출금할 수 없습니다.")
+#         else:
+#             self.withdrawLog.append(amountW)
+#             self.balance -= amountW
+#         return self.balance
     
-    def historyDeposit(self):
-        for i in self.depositcount:
-            i
+#     def historyDeposit(self):
+#         for i in self.depositLog:
+#             print("입금:",i)
+#         print("잔액:",self.balance)
+
+#     def historyWithdraw(self):
+#         for i in self.withdrawLog:
+#             print("출금:",i)
+#         print("잔액:",self.balance)
+
+
+# myacnt = Account("이호수", 100)
+# myacnt.deposit(1000)
+# myacnt.deposit(1000)
+# myacnt.deposit(1000)
+# myacnt.deposit(1000)
+# myacnt.deposit(1000)
+# myacnt.deposit(1000)
+# myacnt.historyDeposit()
+
+# myacnt.withdraw(1000)
+# myacnt.withdraw(1000)
+# myacnt.withdraw(1000)
+# myacnt.historyWithdraw()
