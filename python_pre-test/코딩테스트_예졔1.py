@@ -16,20 +16,6 @@ n * n 정사각형이 있을때
 [13, 12, 11, 10, 9]
 '''
 
-1  2  3  
-8  9  4
-7  6  5
-
-1   2   3  4
-14  15  16 5
-13  20  17 6
-12  19  18 7
-11  10  9  8
-
-
-
-8, 121314, 141516
-
 # n = 5
 
 # # 우 하 좌 상
@@ -46,16 +32,23 @@ n = int(input("정사각형 한 변의 길이: "))
 outList = []
 inList = []
 
-# for j in range(n):
-#     outList.append(inList)
+for j in range(n):
+    inList.append(0)
+for h in range(n):
+    outList.append(inList)
 
 
-while True:
-    for i in range((n**2)):
-      outList[int(i/n)].append(i+1)
-      if x / n == 1 and x % n == 1 :
-         x = n, y -= 1
-      elif x 
+for i in range(1, (n**2)+1):
+    if dy == 0:
+        outList[0][i-1] = i
+        
+    elif dx == n :
+        outList[i-5][n-1] = i
+
+    elif dy == -n :
+        outList[n-1][(3*n)-2-i] = i
+
+
 
 
 # while True:
