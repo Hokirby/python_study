@@ -19,48 +19,45 @@ n * n 정사각형이 있을때
 # n = 5
 
 # # 우 하 좌 상
-dx = [0,1,0,-1]
-dy = [1,0,-1,0]
+dx = [0,1,0,-1] # inList index 
+dy = [1,0,-1,0] # outList index
 
 
+# matrix = [[0] * n for _ in range(n)] # *를 붙이면 []없이 출력 
 
-# matrix = [[0] * n for _ in range(n)]
-
-
-n = int(input("정사각형 한 변의 길이: "))
-
-outList = []
-inList = []
-
-for j in range(n):
-    inList.append(0)
-for h in range(n):
-    outList.append(inList)
+def booleanMake(row, col): # 조건을 간단히, while True문 사용하기 위해 함수 만들기
+    if (row >= 0 and row < N and col >= 0 and col < N):
+        return True
+    else:
+        return False
 
 
-for i in range(1, (n**2)+1):
-    if dy == 0:
-        outList[0][i-1] = i
-        
-    elif dx == n :
-        outList[i-5][n-1] = i
+T = int(input("")) # 테스트 횟수
 
-    elif dy == -n :
-        outList[n-1][(3*n)-2-i] = i
-
-
-
-
-# while True:
-
-#     if : h / n == 1:
-#         outList[0:n][n-1]= h
-
-#     elif : h / n == 2 and h % n <= n - 2 :
-#         outList[n-1][n-1::-1] = h
+for testcase in range(1, T+1):
+    N = int(input("정사각형 한 변의 길이: "))
+    snail = [[0] * N for _ in range(N)]
     
-#     elif : n-2 <= h <=
+    x, y = 0, -1
+    direction = 0 # 0:right, 1:down, 2:left, 3 :up
 
-for k in outList:
-    print(k)
+    i = 1
+    while (i <= (N**2)):
+        x += dx[direction]
+        y += dy[direction]
 
+       
+        while (booleanMake(x, y) and snail[x][y] == 0):
+            snail[x][y]= i
+            x += dx[direction]
+            y += dy[direction]
+            i += 1
+        
+        x -= dx[direction] # 범위 벗어남 : 돌아가기
+        y -= dy[direction]
+        
+        direction = (direction + 1) % 4 # direction의 범위는 우하좌상(4가지)
+            
+    print(f"#{testcase}")
+    for row in snail:
+        print(*row)
