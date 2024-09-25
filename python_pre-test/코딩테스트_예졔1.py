@@ -47,7 +47,7 @@ for testcase in range(1, T+1):
         y += dy[direction]
 
        
-        while (booleanMake(x, y) and snail[x][y] == 0):
+        while (booleanMake(x, y) and snail[x][y] == 0): # True: 위치가 벗어나지 않음 and 0값에 새로운 수를 넣을 때
             snail[x][y]= i
             x += dx[direction]
             y += dy[direction]
