@@ -25,20 +25,21 @@ originNum = 7
 afterNum = 9
 
 def answerMake(heightList):
-    if heightList[0] + heightList[1] + heightList[2] + heightList[3] + heightList[4] + heightList[5] + heightList[6] + heightList[7] == 100:
+    heightList.sort()
+
+    if heightList[0] + heightList[1] + heightList[2] + heightList[3] + heightList[4] + heightList[5] + heightList[6] == 100:
         return True
     else:
         False
-
 def caseMake(heightList):
-    if heightList[0]!= heightList[1]!= heightList[2]!= heightList[3]!= heightList[4]!= heightList[5]!= heightList[6]!= heightList[7]!= heightList[8]:
+    count={}
+    for i in heightList:
+        try: count[i] += 1
+        except: count[i]=1
+    if len(count) == afterNum:
         return True
     else:
         False
-
-numDwarf=[]
-for j in range (1,afterNum+1):
-    numDwarf.append(j)
 
 def heightRandom():
    
@@ -53,18 +54,21 @@ def heightRandom():
 
 heightRandom()
 heightList = heightRandom()
-heightList.sort()
 
-if caseMake(heightList) and answerMake(heightList):
+if answerMake(heightList) == True and caseMake(heightList) == True:
         heightList = heightList
+        
 else:
-    while not (caseMake(heightList)) and not answerMake(heightList):
+    while True:
+        
         heightRandom()
-        heightList.sort()
+        heightList = heightRandom()
 
-        if caseMake(heightList) == True and answerMake(heightList) == True:
+        if answerMake(heightList) == True and caseMake(heightList) == True :
             heightList = heightList
             break
+        else:
+            continue
 
 print("입력:")
 heightList.reverse()
@@ -77,5 +81,5 @@ print()
 
 print("출력:")
 heightList.sort()
-for k in heightList[:7]:
+for k in heightList[:originNum]:
     print(k)
