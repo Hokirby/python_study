@@ -1,0 +1,1 @@
+C:\Users\admin\Desktop\python_study\django1\venvs
